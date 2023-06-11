@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class CapitalArray {
+    //array of state capitals, ordered by state
     private String [][] arrStateCapital = {
         {"Alabama", "Montgomery"},
         {"Alaska", "Juneau"},
@@ -56,10 +57,26 @@ public class CapitalArray {
         
     };
 
+    //this method returns the user input
     public String GetUserInput(String prompt){
+
+        //init a scanner to read the user's input
         Scanner scannerObj = new Scanner(System.in);
         System.out.println(prompt);
 
         return scannerObj.nextLine();
+    }
+
+    //this method iterates through the array and checks if the entered capital is in the array
+    public boolean IsCapitalInList(String capital){
+        //lower case to rid of simple casing issues
+        String strLowerCapital = capital.toLowerCase();
+        for (String[] strings : arrStateCapital) {
+            //comparison, if found return true
+            if (strings[1].toLowerCase().equals(strLowerCapital)) {
+                return true;               
+            }
+        }
+        return false;
     }
 }
