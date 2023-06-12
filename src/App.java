@@ -12,5 +12,11 @@ public class App {
             System.out.println("User is incorrect.");
         }
 
+        String[][] arrCapital = capitalArray.GetCapitalArray();
+
+        for (String[] string : arrCapital) {
+            System.out.println(string[0] + " - " + string[1]);
+        }
+
     }
 }

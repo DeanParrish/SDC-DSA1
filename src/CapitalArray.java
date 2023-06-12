@@ -1,6 +1,8 @@
+import java.util.Properties;
 import java.util.Scanner;
 
 public class CapitalArray {
+
     //array of state capitals, ordered by state
     private String [][] arrStateCapital = {
         {"Alabama", "Montgomery"},
@@ -78,5 +80,9 @@ public class CapitalArray {
             }
         }
         return false;
+    }
+
+    public String[][] GetCapitalArray(){
+        return arrStateCapital;
     }
 }
