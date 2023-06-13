@@ -25,5 +25,7 @@ public class App {
             System.out.println(string[0] + " - " + string[1]);
         }
 
+        capitalArray.CapitalGame();
+
     }
 }

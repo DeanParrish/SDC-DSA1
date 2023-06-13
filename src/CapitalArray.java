@@ -89,12 +89,12 @@ public class CapitalArray {
 
     public String[][] BubbleSort(String[][] arr) {
         //bool value to indicate a swap has been made in the array
-        boolean swap = true;
+        boolean boolSwap = true;
 
         //while to continue calling sort until no more swaps have been made
-        while (swap) {
+        while (boolSwap) {
             //set to false for no false positive swaps
-            swap = false;
+            boolSwap = false;
             //iterate array
             for (int i = 0; i < arr.length - 1; i++) { 
                 //check first character of second "column" in the array and
@@ -106,11 +106,29 @@ public class CapitalArray {
                         arr[i][k] = arr[i + 1][k];
                         arr[i + 1][k] = temp;
                     }
-                    swap = true;
+                    boolSwap = true;
                 }
             }
         }
         return arr;
 
+    }
+
+    public void CapitalGame(){
+        //counter for correct answers
+        int intTotalCorrect = 0;      
+
+        //loop through each item in the array and ask for capital of state
+        for (int i = 0; i < arrStateCapital.length-1; i++) {
+            //prompt user for capital, return input
+            String strUserInput = GetUserInput("Enter Capital for " + arrStateCapital[i][0]);
+            //convert user input and capital to lower for comparison, if equal add one to correct counter 
+            if (strUserInput.toLowerCase().equals(arrStateCapital[i][1].toLowerCase())) {
+                intTotalCorrect++;
+            }
+        }
+
+        //display correct answer count
+        System.out.println(Integer.toString(intTotalCorrect) + " correct out of 50!");
     }
 }
